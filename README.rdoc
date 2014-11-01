@@ -23,6 +23,23 @@ Things you may want to cover:
 
 * ...
 
+Basic Blog Application
+
+For Authentication(sign_in and sign_up) system I have used Devise Gem
+
+User can create a blog. once admin has approved the blog is display in the home page of the application public view, any one can view the approved blog.
+
+In this system there two user role played "Admin" and "User"
+
+only "Admin" User can approve the blog,
+
+All sign_up users are under  the "User" Role
+
+"Admin" user is created in the back end "db/seed.rb" file, by run the command rake db:seed, there is  no sign_up for admin user.
+
+
+
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
