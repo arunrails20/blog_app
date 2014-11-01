@@ -1,0 +1,12 @@
+%h1 Editing blog
+= form_for(@blog, :url => blog_url) do |f|
+
+  %div
+    = f.label :title
+    = f.text_field :title
+  %div
+    = f.label :description
+    = f.text_area :description
+  %div
+    = f.submit 'Update'
+= link_to 'Back', blogs_path

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlogApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="user_nav">
+    <%= link_to 'Home', '/' %>
+    <% if user_signed_in? %>
+        <%= link_to 'Blogs', blogs_path %>
+        <% if current_user.profile %>
+         <span> <%= link_to 'Profile', profile_path(current_user.profile.id) %> </span>
+        <% else %>
+          <span> <%= link_to 'Create Profile', new_profile_path %> </span>
+        <% end %>
+       Signed in as <%= current_user.email %>.
+        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete%>
+    <% else %>
+        <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
+    <% end %>
+</div>
+<%= yield %>
+
+</body>
+</html>

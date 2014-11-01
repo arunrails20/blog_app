@@ -1,0 +1,22 @@
+%h2= "Blogs Collections"
+%table
+	%thead
+		%tr
+			%th Title
+			%th Description
+			%th Approve
+			%th
+			%th
+	%tbody
+		- @blogs.each do |blog|
+			= content_tag_for(:tr, blog) do
+				%td= blog.title
+				%td= blog.description
+				- if current_user.role && current_user.role_name == "Admin"
+					%td= check_box_tag 'approve_#{blog.id}', blog.id, blog.approve, class: "blog-approve"
+				- else
+					%td= blog.approve
+				%td= link_to 'Show', blog_path(blog.id)
+				%td= link_to 'Edit', edit_blog_path(blog.id)
+%br
+= link_to 'New blog', new_blog_path

@@ -1,0 +1,17 @@
+%h5 Create Profile
+
+= form_for(@profile, :url => profiles_url) do |f|
+	%div
+		= f.label :first_name
+		= f.text_field :first_name
+	%div
+		= f.label :last_name
+		= f.text_field :last_name
+	%div
+		= f.label :address_line_one
+		= f.text_field :address_line_one
+	%div
+		= f.label :address_line_two
+		= f.text_field :address_line_two
+	%div
+		= f.submit 'Save'

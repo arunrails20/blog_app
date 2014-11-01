@@ -1,0 +1,11 @@
+%h5 Create new Blog
+
+= form_for(@blog, :url => blogs_url) do |f|
+	%div
+		= f.label :title
+		= f.text_field :title
+	%div
+		= f.label :description
+		= f.text_area :description
+	%div
+		= f.submit 'Save'

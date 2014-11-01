@@ -1,0 +1,16 @@
+%h3 Show blog
+%p
+  %b First Name:
+  = @profile.first_name
+%p
+  %b Last Name:
+  = @profile.last_name
+%p
+  %b Addres Line One:
+  = @profile.address_line_one
+%p
+  %b Addres Line Two:
+  = @profile.address_line_two
+  
+
+= link_to 'Edit', edit_profile_path

@@ -1,0 +1,15 @@
+%h3 Show blog
+%p
+  %b Title:
+  = @blog.title
+%p
+  %b Description:
+  = @blog.description
+%p
+  %b Approve:
+  = @blog.approve
+  
+- if current_user
+  = link_to 'Edit', edit_blog_path
+
+= link_to 'Back', blogs_path
