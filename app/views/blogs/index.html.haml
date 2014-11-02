@@ -12,7 +12,7 @@
 			= content_tag_for(:tr, blog) do
 				%td= blog.title
 				%td= blog.description
-				- if current_user.role && current_user.role_name == "Admin"
+				- if current_user.is_admin?
 					%td= check_box_tag 'approve_#{blog.id}', blog.id, blog.approve, class: "blog-approve"
 				- else
 					%td= blog.approve

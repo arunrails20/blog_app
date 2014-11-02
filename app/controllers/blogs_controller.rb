@@ -22,6 +22,12 @@ class BlogsController < ApplicationController
     end
 	end
 	
+	def show
+	end
+	
+	def edit
+	end
+	
 	def update
 		respond_to do |format|
       if @blog.update(blog_params)
@@ -32,6 +38,7 @@ class BlogsController < ApplicationController
     end
 	end
 	
+	#Ajax request to approve or unapprove the blog and send as json response
 	def blog_approve
 		@blog.update_attributes(approve: params["approve"])
 		render json: {approve: @blog.approve}

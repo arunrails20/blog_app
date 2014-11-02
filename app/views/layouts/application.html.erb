@@ -8,13 +8,13 @@
 </head>
 <body>
 <div id="user_nav">
-    <%= link_to 'Home', '/' %>
+    <%= link_to 'Home - All Approved Blogs:', '/' %>
     <% if user_signed_in? %>
-        <%= link_to 'Blogs', blogs_path %>
+        <%= link_to 'Blogs:', blogs_path %>
         <% if current_user.profile %>
-         <span> <%= link_to 'Profile', profile_path(current_user.profile.id) %> </span>
+         <span> <%= link_to 'Profile:', profile_path(current_user.profile.id) %> </span>
         <% else %>
-          <span> <%= link_to 'Create Profile', new_profile_path %> </span>
+          <span> <%= link_to 'Create Profile:', new_profile_path %> </span>
         <% end %>
        Signed in as <%= current_user.email %>.
         <%= link_to 'Sign out', destroy_user_session_path, :method => :delete%>

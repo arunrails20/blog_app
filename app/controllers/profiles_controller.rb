@@ -19,6 +19,12 @@ class ProfilesController < ApplicationController
     end
 	end
 	
+	def show
+	end
+	
+	def edit
+	end
+	
 	def update
 		respond_to do |format|
       if @profile.update(profile_params)
